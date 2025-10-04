@@ -1,0 +1,144 @@
+/* Home.css */
+
+.home-container {
+  padding-top: 80px; /* Account for fixed navbar */
+}
+
+/* Header section */
+.header-background {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f4/University_Residential_Housing_Ennis_Hall.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 40px;
+  color: black;
+  text-align: center;
+  position: relative;
+}
+
+.header-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.header-background > * {
+  position: relative;
+  z-index: 2;
+}
+
+.header-text {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Search box container */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  gap: 15px;
+}
+
+.filter-icon {
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Content section */
+.content-section {
+  padding: 40px;
+}
+
+/* Explore title */
+.explore-title {
+  margin: 0 0 30px 0;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Cards container */
+.cards-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+/* Single card style */
+.card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-info {
+  background-color: #0066ff;
+  color: white;
+  padding: 20px;
+}
+
+.card-info h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.card-info p {
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  color: white;
+}
+
+/* View info button */
+.view-button {
+  background-color: #d4d4f0;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.view-button:hover {
+  background-color: #b4b4d0;
+}

@@ -1,0 +1,53 @@
+/* Navbar.css */
+.nav {
+    background-color: #0066FF;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.nav-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    font-size: 1.5rem;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    transition: opacity 0.3s;
+}
+
+.nav-list li a:hover {
+    opacity: 0.8;
+}
+
+/* Style for the active link */
+.active-link {
+    border-bottom: 2px solid white;
+}
+
+.profile-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+}
+
+.profile-icon:hover {
+    opacity: 0.8;
+}
