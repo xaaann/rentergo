@@ -1,0 +1,221 @@
+/* RentPage.css */
+
+.rent-page-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 50px); /* Adjust based on your Navbar height */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.rent-header {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.rent-header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.rent-header p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.rental-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding-bottom: 40px;
+}
+
+/* --- Section Styling --- */
+
+.personal-details-section,
+.rental-details-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.personal-details-section h2,
+.rental-details-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* --- Input Group Styling (Personal Details) --- */
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #0066ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 255, 0.3);
+}
+
+/* --- Radio Button Styling (Rental Details) --- */
+
+.room-preference-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.radio-group {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 25px 40px; /* Vertical and horizontal gap */
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #444;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    /* Style for the radio button itself */
+    margin-right: 10px;
+    appearance: none; /* Hide default radio button */
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    top: 0;
+    transition: border 0.3s;
+}
+
+.radio-group input[type="radio"]:checked {
+    border-color: #0066ff;
+}
+
+.radio-group input[type="radio"]:checked::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #0066ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* --- Action Buttons --- */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.cancel-button,
+.rent-submit-button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 150px;
+}
+
+.cancel-button {
+    background-color: #ccc;
+    color: #333;
+}
+
+.cancel-button:hover {
+    background-color: #b3b3b3;
+}
+
+.rent-submit-button {
+    background-color: #0066ff;
+    color: white;
+}
+
+.rent-submit-button:hover {
+    background-color: #0052cc;
+}
+
+/* --- Fallback Styling (If property data is missing) --- */
+
+.fallback {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.fallback-button {
+    background-color: #0066ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 800px) {
+    .form-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .personal-details-section,
+    .rental-details-section {
+        padding: 0;
+    }
+    
+    .rental-form {
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cancel-button,
+    .rent-submit-button {
+        min-width: 100%;
+    }
+
+    .radio-group {
+        grid-template-columns: 1fr;
+    }
+}

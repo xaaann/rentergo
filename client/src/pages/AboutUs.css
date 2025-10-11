@@ -1,0 +1,286 @@
+.about-container{
+  font-family: Arial;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.hero-content h1{
+  font-size: 100px;
+  color: #000;
+}
+
+.subtitle {
+  color: #0066ff;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+  margin-right: 40px;
+}
+
+.about-text h2 {
+  font-size: 100px;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 50px;
+}
+
+.about-image img {
+  width: 250px;
+  height: auto;
+}
+
+.mission-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0066ff;
+  color: white;
+  padding: 50px 30px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.mission-left img {
+  width: 250px;
+}
+
+.mission-right {
+  max-width: 500px;
+  text-align: left;
+}
+
+.mission-right h2 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.mission-right h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.mission-right p {
+  font-size: 15px;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+/* Values Section */
+.values-section {
+  background-color: #f8f8f8;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.values-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.values-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.value-item {
+  max-width: 300px;
+  text-align: left;
+}
+
+.value-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.value-item p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.nav-left img.logo {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #002b6b;
+}
+
+.subtitle {
+  color: #007bff;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+  margin-right: 40px;
+}
+
+.about-text h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about-image img {
+  width: 250px;
+  height: auto;
+}
+
+/* Mission Section */
+.mission-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0066ff;
+  color: white;
+  padding: 50px 20px;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.mission-left img {
+  width: 250px;
+}
+
+.mission-right {
+  max-width: 500px;
+  text-align: left;
+}
+
+.mission-right h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mission-right h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 0;
+  text-align: center;
+}
+
+.mission-right p {
+  font-size: 15px;
+  margin-top: 15px;
+  line-height: 2;
+  text-align: center;
+}
+
+/* Values Section */
+.values-section {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.values-section h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.values-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.value-item {
+  max-width: 300px;
+  text-align: left;
+}
+
+.value-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+ text-align: center;
+}
+
+.value-item p {
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  background-color: #fff;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}

@@ -1,0 +1,92 @@
+/* ===== Main Section ===== */
+.main-section {
+  padding: 2rem 3rem;
+}
+
+.section-title {
+  margin-top: 50px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+/* ===== Landlord List ===== */
+.landlord-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.landlord-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.landlord-card:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ===== Landlord Info ===== */
+.landlord-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.landlord-name {
+  font-weight: 600;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  color: #111827;
+}
+
+.verified-dot {
+  color: #0066ff;
+  font-size: 0.875rem;
+  margin-left: 0.25rem;
+}
+
+.landlord-address {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+/* ===== Button Styling ===== */
+.arrow-btn {
+  background: none;
+  border: none;
+  color: #4b5563;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.arrow-btn:hover {
+  color: #0066ff;
+  transform: translateX(4px);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #0066ff;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 3rem;
+}

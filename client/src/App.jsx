@@ -6,23 +6,27 @@ import Home from './pages/Home';
 import Landlord from './pages/Landlord';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
-
+import ViewInfo from './pages/ViewInfo';
+import RentPage from './pages/RentPage';
+import LandlordInfo from './pages/LandlordInfo'; // 👈 Import your new page
 
 export default function App() {
   return (
     <>
-      {/* Renders the Navbar on every page */}
+      {/* Navbar appears on all pages */}
       <Navbar /> 
 
       <div className="container">
-        {/* Routes to display the correct component based on the URL */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/landlord" element={<Landlord />} />
-          {/* FIX: Set a consistent path for the About Us component */}
-          <Route path="/aboutus" element={<AboutUs />} /> 
-          {/* FIX: Set a consistent path for the Contact Us component */}
-          <Route path="/contactus" element={<ContactUs />} /> 
+          <Route path="/aboutUs" element={<AboutUs />} /> 
+          <Route path="/contactUs" element={<ContactUs />} /> 
+          <Route path="/property/:id" element={<ViewInfo />} /> 
+          <Route path="/rent" element={<RentPage />} /> 
+          
+          {/* 👇 New route for the landlord info page */}
+          <Route path="/landlord-info/:id" element={<LandlordInfo />} />
         </Routes>
       </div>
     </>
