@@ -12,7 +12,7 @@ export default function LandlordInfo() {
       name: "Rizal Boardinghouse",
       owner: "Jhean Kate Rizal",
       address: "Gen. Luna, La Paz Iloilo City",
-      avatar: "avatar1.png",
+      image: "landlord1.jpg",
       boardinghouse: "Rizal Boardinghouse",
       listings: [
         { img: "listing1.jpg", title: "1 Available", subtitle: "Double Bed" },
@@ -23,7 +23,7 @@ export default function LandlordInfo() {
       name: "Magss Boarding House",
       owner: "Mags Salvador",
       address: "Burgos St. Lapaz Iloilo City",
-      avatar: "avatar2.png",
+      image: "landlord2.jpg",
       boardinghouse: "Magss Boarding House",
       listings: [
         { img: "listing3.jpg", title: "3 Available", subtitle: "Bunk Bed" },

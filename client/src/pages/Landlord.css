@@ -22,16 +22,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #d1d5db;
+  border: 1px solid #d9d9d9;
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
   background-color: #ffffff;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
 
-.landlord-card:hover {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+  
 }
 
 /* ===== Landlord Info ===== */

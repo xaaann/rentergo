@@ -152,10 +152,10 @@
 .explore-title {
   margin: 0 0 30px 0;
   font-size: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
-/* Cards */
+
 .cards-container {
   display: flex;
   gap: 30px;
