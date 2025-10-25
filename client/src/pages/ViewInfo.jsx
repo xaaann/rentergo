@@ -18,7 +18,7 @@ export default function ViewInfo() {
       },
       images: ["/room0.jpg", "/room1.jpg", "/room2.jpg", "/room3.jpg"],
       description:
-        "A comfortable boarding house near the university, ideal for female tenants looking for a safe and peaceful place to stay.",
+        "A comfortable boarding house near the CPU gate 8, ideal for female tenants looking for a safe and peaceful place to stay.",
       amenities: [
         "Free use of shared kitchen",
         "Laundry area available",
@@ -43,7 +43,7 @@ export default function ViewInfo() {
         phone: "09123456789",
         email: "RenterGo@gmail.com",
       },
-      map: "/bakhaw-map.png", // 🗺️ added map for this property
+      map: "/bakhaw-map.png",
     },
     2: {
       title: "Maggs Boarding House",
@@ -52,17 +52,17 @@ export default function ViewInfo() {
       images: ["/maggs bh1.jpg", "/maggs bh2.jpg", "/maggs bh3.jpg"],
       description: "A single room with double spacer bed",
       amenities: [
-        "Free used of shared kitchen",
+        "Free use of shared kitchen",
         "Laundry area available",
-        "Clean shared bathrooms(regularly maintained)",
+        "Clean shared bathrooms (regularly maintained)",
       ],
-      highlights: ["1 Month Deposit", "Wifi", "Parking", "Air Condition"],
+      highlights: ["1 Month Deposit", "WiFi", "Parking", "Air Condition"],
       contact: {
         name: "Jhean Kate Rizal",
         phone: "09299994538",
         email: "RenterGo@gmail.com",
       },
-      map: "/lapaz-map.png", // 🗺️ added map for this property
+      map: "/lapaz-map.png",
     },
     3: {
       title: "Near Santa Isabel College",
@@ -71,17 +71,17 @@ export default function ViewInfo() {
       images: ["/nay fernandez bh1.jpg", "/nay fernandez bh2.jpg"],
       description: "Convenient location near WIT",
       amenities: [
-        "Free used of shared kitchen",
+        "Free use of shared kitchen",
         "Laundry area available",
-        "Clean shared bathrooms(regularly maintained)",
+        "Clean shared bathrooms (regularly maintained)",
       ],
-      highlights: ["1 Month Deposit", "Wifi"],
+      highlights: ["1 Month Deposit", "WiFi"],
       contact: {
         name: "Property Owner",
         phone: "09123456789",
         email: "RenterGo@gmail.com",
       },
-      map: "/pueblo-map.png", // 🗺️ added map for this property
+      map: "/pueblo-map.png",
     },
   };
 
@@ -109,13 +109,11 @@ export default function ViewInfo() {
   };
 
   const handleRent = () => {
-    navigate("/rent", {
-      state: { property },
-    });
+    navigate("/rent", { state: { property } });
   };
 
   const handleBack = () => {
-    navigate("/");
+    navigate("/home");
   };
 
   const renderPrice = () => {
@@ -132,7 +130,6 @@ export default function ViewInfo() {
 
   return (
     <div className="property-detail scrollable">
-      {/* 🔙 Back Button (top only, not sticky) */}
       <button className="back-button-top" onClick={handleBack}>
         ← Back to Home
       </button>
@@ -223,13 +220,31 @@ export default function ViewInfo() {
               <li>✓ 1 month advance, 1 month deposit</li>
             </ul>
 
-            {/* Contact Section */}
+            {/* Contact Section (disabled inputs, not clickable) */}
             <div className="contact-card">
               <h3>Contact Us</h3>
               <div className="contact-info">
-                <input type="text" value={property.contact.name} readOnly />
-                <input type="text" value={property.contact.phone} readOnly />
-                <input type="text" value={property.contact.email} readOnly />
+                <input
+                  type="text"
+                  value={property.contact.name}
+                  readOnly
+                  disabled
+                  className="contact-input"
+                />
+                <input
+                  type="text"
+                  value={property.contact.phone}
+                  readOnly
+                  disabled
+                  className="contact-input"
+                />
+                <input
+                  type="text"
+                  value={property.contact.email}
+                  readOnly
+                  disabled
+                  className="contact-input"
+                />
               </div>
               <div className="update-info">
                 <span>🕐</span>
