@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Verified } from "lucide-react"; // ✅ import the verified icon
 import "./LandlordInfo.css";
 
 export default function LandlordInfo() {
@@ -9,45 +10,28 @@ export default function LandlordInfo() {
   // Simulated landlord data
   const landlords = [
     {
-      name: "Rizal Boardinghouse",
-      owner: "Jhean Kate Rizal",
-      address: "Gen. Luna, La Paz Iloilo City",
-      image: "landlord1.jpg",
-      boardinghouse: "Rizal Boardinghouse",
-      listings: [
-        { img: "listing1.jpg", title: "1 Available", subtitle: "Double Bed" },
-        { img: "listing2.jpg", title: "2 Available", subtitle: "Single Room" },
-      ],
+      name: "Isidro Boardinghouse",
+      owner: "Isidro Bolante",
+      address: "Brgy. Bakhaw, Mandurriao, Iloilo City",
+      avatar: "/boy.png",
+      boardinghouse: "Isidro Boardinghouse",
+      listings: [{ img: "/room1.jpg", title: "1 Available", subtitle: "Double Bed" }],
     },
     {
       name: "Magss Boarding House",
       owner: "Mags Salvador",
       address: "Burgos St. Lapaz Iloilo City",
-      image: "landlord2.jpg",
+      avatar: "/woman (1).png",
       boardinghouse: "Magss Boarding House",
-      listings: [
-        { img: "listing3.jpg", title: "3 Available", subtitle: "Bunk Bed" },
-      ],
+      listings: [{ img: "listing3.jpg", title: "3 Available", subtitle: "Bunk Bed" }],
     },
     {
-      name: "Tanya Boardinghouse",
-      owner: "Tanya Lim",
-      address: "Brgy Tacas, Jaro, Iloilo City",
-      avatar: "avatar3.png",
-      boardinghouse: "Tanya Boardinghouse",
-      listings: [
-        { img: "listing4.jpg", title: "1 Available", subtitle: "Private Room" },
-      ],
-    },
-    {
-      name: "Sarrah Boardinghouse",
-      owner: "Sarrah Cruz",
-      address: "Iloilo City",
-      avatar: "avatar4.png",
-      boardinghouse: "Sarrah Boardinghouse",
-      listings: [
-        { img: "listing5.jpg", title: "2 Available", subtitle: "Double Bed" },
-      ],
+      name: "Nay Fernandez Boardinghouse",
+      owner: "Nay Fernandez",
+      address: "Brgy. Pueblo Conception, Mandurriao, Iloilo",
+      avatar: "/woman.png",
+      boardinghouse: "Nay Fernandez Boardinghouse",
+      listings: [{ img: "listing4.jpg", title: "1 Available", subtitle: "Private Room" }],
     },
   ];
 
@@ -59,7 +43,7 @@ export default function LandlordInfo() {
 
   return (
     <div className="landlord-info-page">
-      {/* Back Button - Visible just below Navbar */}
+      {/* Back Button */}
       <div className="back-btn-container">
         <button className="back-btn" onClick={() => navigate("/landlord")}>
           ← Back to Landlords
@@ -70,7 +54,8 @@ export default function LandlordInfo() {
         <img src={landlord.avatar} alt="Landlord" className="profile-avatar" />
         <div className="profile-details">
           <h2 className="landlord-name">
-            {landlord.owner} <span className="verified-badge">✔</span>
+            {landlord.owner}
+            <Verified className="verified-check" size={18} /> {/* ✅ verified icon */}
           </h2>
           <p className="landlord-role">Owner of {landlord.boardinghouse}</p>
           <p className="landlord-address">{landlord.address}</p>

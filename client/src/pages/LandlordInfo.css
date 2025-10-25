@@ -5,10 +5,9 @@
   min-height: 100vh;
 }
 
-/* ===== Back Button (just below navbar) ===== */
 .back-btn-container {
   margin-bottom: 25px;
-  margin-top: 10px; /* slight gap below navbar */
+  margin-top: 10px; 
 }
 
 .back-btn {
@@ -20,14 +19,9 @@
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 3px 8px rgba(0, 102, 255, 0.3);
 }
 
-.back-btn:hover {
-  background-color: #0052cc;
-  transform: translateY(-2px);
-}
+
 
 /* ===== Profile Section ===== */
 .profile-section {
@@ -62,9 +56,10 @@
   gap: 4px;
 }
 
-.verified-badge {
+.verified-check {
   color: #0066ff;
-  font-size: 1.1rem;
+  margin-left: 0.3rem;
+  vertical-align: middle;
 }
 
 .landlord-role {
@@ -97,13 +92,7 @@
   border-radius: 10px;
   padding: 12px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.listing-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  
 }
 
 .listing-img {

@@ -11,7 +11,8 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <ul className="nav-list">
-        <CustomLink to="/">Home</CustomLink>
+        {/* ✅ Changed “to” from "/" → "/home" */}
+        <CustomLink to="/home">Home</CustomLink>
         <CustomLink to="/landlord">Landlord</CustomLink>
         <CustomLink to="/aboutUs">About</CustomLink>
         <CustomLink to="/contactUs">Contact Us</CustomLink>

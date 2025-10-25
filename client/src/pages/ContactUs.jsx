@@ -36,7 +36,7 @@ export default function ContactUs() {
 
       {/* Footer */}
       <footer className="footer">
-        © 2025 Boarding House Finder. All rights reserved.
+       © 2025 RenterGo. All rights reserved.
       </footer>
     </div>
   );

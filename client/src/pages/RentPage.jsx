@@ -41,10 +41,7 @@ export default function RentPage() {
   return (
     <div className="rent-page-container">
       {/* Property Context Header (Optional, but helpful for user context) */}
-      <header className="rent-header">
-        <h1>Rental Application</h1>
-        <p>Applying for: **{property.title}** | Price: **₱{property.price.toLocaleString()}/month**</p>
-      </header>
+     
 
       <form className="rental-form" onSubmit={handleRentSubmit}>
         <div className="form-content">

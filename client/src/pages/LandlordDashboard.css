@@ -1,9 +1,22 @@
+/* ===== Layout Fix for Footer Position ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.landlord-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures full-page height */
+}
+
 .landlord-dashboard {
+  flex: 1; /* pushes footer to bottom */
   padding: 70px;
   font-family: "Arial", sans-serif;
 }
 
-/* Profile Section */
+/* ===== Profile Section ===== */
 .profile-section {
   display: flex;
   justify-content: space-between;
@@ -26,20 +39,24 @@
 }
 
 .profile-details {
-  line-height: 0;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .profile-name {
-  font-size: 1.4rem;
-  font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 
-.verified-icon {
-  color: #0066ff;
+.verified-check {
+  color: #007bff;
   font-size: 1rem;
+  margin-left: 4px;
 }
 
 .profile-role {
@@ -52,7 +69,7 @@
   color: #666;
 }
 
-/* Right-side actions */
+/* ===== Profile Actions ===== */
 .profile-actions {
   display: flex;
   align-items: center;
@@ -70,7 +87,7 @@
 }
 
 .add-listing-btn:hover {
-  background-color: #0066ff;
+  background-color: #0057e6;
 }
 
 .notif-icon {
@@ -83,14 +100,14 @@
   color: #0066ff;
 }
 
-/* Boardinghouse Title */
+/* ===== Boardinghouse Title ===== */
 .boardinghouse-title {
   margin-top: 2rem;
   font-size: 1.8rem;
   font-weight: 700;
 }
 
-/* Listings */
+/* ===== Listings Section ===== */
 .listings-section {
   margin-top: 1rem;
 }
@@ -143,4 +160,15 @@
 
 .icon:hover {
   color: #0066ff;
+}
+
+/* ===== Footer (Fixed Downward) ===== */
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  border-top: 1px solid #e5e7eb;
+  padding: 20px 0;
+  background-color: #fff;
+  margin-top: auto; /* pushes footer to bottom */
 }

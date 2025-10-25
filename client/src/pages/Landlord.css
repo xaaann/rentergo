@@ -1,14 +1,36 @@
+/* ===== Page Layout ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.bg-white {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures footer stays at bottom */
+}
+
 /* ===== Main Section ===== */
 .main-section {
-  padding: 2rem 3rem;
+  flex: 1; /* push footer to the bottom */
+  padding: 6rem 3rem 2rem;
+}
+
+.title-container {
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 .section-title {
-  margin-top: 50px;
-  font-size: 1.5rem;
+  font-size: 40px;
   font-weight: 700;
+  color: #000;
   margin-bottom: 1.5rem;
-  color: #111827;
+  text-align: left;
+}
+
+.section-line {
+  display: none;
 }
 
 /* ===== Landlord List ===== */
@@ -27,7 +49,6 @@
   padding: 0.75rem 1rem;
   background-color: #ffffff;
 
-  
 }
 
 /* ===== Landlord Info ===== */
@@ -45,18 +66,20 @@
 }
 
 .landlord-name {
-  font-weight: 600;
-  font-size: 1.125rem;
   display: flex;
   align-items: center;
-  color: #111827;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
-.verified-dot {
-  color: #0066ff;
-  font-size: 0.875rem;
-  margin-left: 0.25rem;
+.verified-check {
+  color: #0066ff; 
+  font-size: 1rem;
+  margin-left: 4px;
+  vertical-align: middle;
 }
+
 
 .landlord-address {
   color: #4b5563;
@@ -77,12 +100,13 @@
   transform: translateX(4px);
 }
 
-/* ===== Footer ===== */
+/* ===== Footer (Fixed to Bottom) ===== */
 .footer {
-  background-color: #0066ff;
-  color: #ffffff;
   text-align: center;
-  padding: 15px;
   font-size: 14px;
-  margin-top: 3rem;
+  color: #333;
+  border-top: 1px solid #e5e7eb;
+  padding: 20px 0;
+  background-color: #fff;
+  margin-top: auto; /* pushes it to the bottom */
 }

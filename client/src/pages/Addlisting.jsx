@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
 import "./AddListing.css";
 
-const AddListing = () => {
+export default function AddListing() {
   const [form, setForm] = useState({
     title: "",
     address: "",
@@ -18,114 +17,102 @@ const AddListing = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Basic validation
+    if (!form.title || !form.address || !form.rate || !form.contact || !form.details) {
+      alert("Please fill in all required fields!");
+      return;
+    }
+    
     alert("Listing Posted!");
+    // Navigate to landlord page
+    window.location.href = "/landlord";
   };
 
   return (
-    <div>
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div className="container">
-          <a className="navbar-brand d-flex align-items-center" href="#">
-            <img src="logo.png" alt="Renter Logo" className="logo" />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul className="navbar-nav mb-2 mb-lg-0">
-              <li className="nav-item"><a className="nav-link active" href="#">Home</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Landlord</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">About</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Contact Us</a></li>
-            </ul>
-          </div>
-          <i className="bi bi-person-circle fs-4 text-white"></i>
-        </div>
-      </nav>
+    <div className="add-listing-page">
+      {/* Form Section */}
+      <div className="form-section">
+        <h2 className="main-heading">Add new Listings</h2>
 
-      {/* Add Listing Form */}
-      <div className="container form-container">
-        <h5 className="fw-semibold mt-4">Add new</h5>
-        <h3 className="fw-bold mb-4">Listings</h3>
-
-        <form onSubmit={handleSubmit}>
-          <div className="row g-4">
+        <form className="listing-form" onSubmit={handleSubmit}>
+          <div className="form-grid">
             {/* Left Side */}
-            <div className="col-md-6">
-              <div className="upload-box d-flex align-items-center justify-content-center">
-                <i className="bi bi-image fs-1"></i>
+            <div className="left-side">
+              <div className="upload-box">
+                <span className="upload-icon">🖼️</span>
               </div>
 
-              <h6 className="fw-semibold mt-3">Listing Information</h6>
+              <h6 className="section-title">Listing Information</h6>
 
               <input
                 type="text"
                 name="title"
                 placeholder="Title info"
-                className="form-control mb-2"
                 value={form.title}
                 onChange={handleChange}
+                className="form-input"
+                required
               />
               <input
                 type="text"
                 name="address"
                 placeholder="Address"
-                className="form-control mb-2"
                 value={form.address}
                 onChange={handleChange}
+                className="form-input"
+                required
               />
               <input
                 type="text"
                 name="rate"
                 placeholder="Monthly Rate"
-                className="form-control mb-2"
                 value={form.rate}
                 onChange={handleChange}
+                className="form-input"
+                required
               />
             </div>
 
             {/* Right Side */}
-            <div className="col-md-6">
+            <div className="right-side">
               <input
                 type="text"
                 name="contact"
                 placeholder="Add Contact Us"
-                className="form-control mb-3"
                 value={form.contact}
                 onChange={handleChange}
+                className="form-input"
+                required
               />
 
-              <label className="form-label small fw-semibold">Details</label>
+              <label className="form-label">Details</label>
               <textarea
                 name="details"
                 placeholder="Enter details..."
-                className="form-control mb-3"
                 rows="3"
                 value={form.details}
                 onChange={handleChange}
+                className="form-textarea"
+                required
               ></textarea>
 
+              <label className="form-label">Amenities</label>
               <input
                 type="text"
                 name="amenities"
                 placeholder="add & edit amenities"
-                className="form-control mb-3"
                 value={form.amenities}
                 onChange={handleChange}
+                className="form-input"
               />
 
-              <div className="upload-map d-flex align-items-center">
-                <i className="bi bi-image fs-5 me-2"></i>
+              <div className="upload-map">
+                <span className="map-icon">🗺️</span>
                 <span>Add Map</span>
               </div>
 
-              <button type="submit" className="btn btn-primary mt-3 w-100">
+              <button type="submit" className="post-btn">
                 Post
               </button>
             </div>
@@ -134,6 +121,4 @@ const AddListing = () => {
       </div>
     </div>
   );
-};
-
-export default AddListing;
+}

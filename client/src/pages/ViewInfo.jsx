@@ -14,7 +14,7 @@ export default function ViewInfo() {
       location: "Brgy. Bakhaw, Mandurriao, Iloilo",
       price: {
         withoutCR: 4500,
-        withCR: 8500
+        withCR: 8500,
       },
       images: ["/room0.jpg", "/room1.jpg", "/room2.jpg", "/room3.jpg"],
       description:
@@ -23,7 +23,7 @@ export default function ViewInfo() {
         "Free use of shared kitchen",
         "Laundry area available",
         "Clean shared bathrooms (regularly maintained)",
-        "Water and electricity not included (₱150 if you want to pay for water bill)"
+        "Water and electricity not included (₱150 if you want to pay for water bill)",
       ],
       highlights: [
         "1 Month Deposit",
@@ -31,55 +31,58 @@ export default function ViewInfo() {
         "WiFi",
         "Parking",
         "Girls Only",
-        "Shared Room"
+        "Shared Room",
       ],
       houseRules: [
         "Visitor is only allowed until 6 PM",
         "Pets are not allowed",
-        "Overnight stay costs ₱100 and only for family members"
+        "Overnight stay costs ₱100 and only for family members",
       ],
       contact: {
         name: "Isidro Bolante",
         phone: "09123456789",
-        email: "RenterGo@gmail.com"
-      }
+        email: "RenterGo@gmail.com",
+      },
+      map: "/bakhaw-map.png", // 🗺️ added map for this property
     },
     2: {
       title: "Maggs Boarding House",
       location: "Burgos St. La Paz",
       price: 2500,
-      images: ["Mags bh.jpg", "bakhaw bh.jpg"],
+      images: ["/maggs bh1.jpg", "/maggs bh2.jpg", "/maggs bh3.jpg"],
       description: "A single room with double spacer bed",
       amenities: [
         "Free used of shared kitchen",
         "Laundry area available",
-        "Clean shared bathrooms(regularly maintained)"
+        "Clean shared bathrooms(regularly maintained)",
       ],
       highlights: ["1 Month Deposit", "Wifi", "Parking", "Air Condition"],
       contact: {
         name: "Jhean Kate Rizal",
         phone: "09299994538",
-        email: "RenterGo@gmail.com"
-      }
+        email: "RenterGo@gmail.com",
+      },
+      map: "/lapaz-map.png", // 🗺️ added map for this property
     },
     3: {
-      title: "WIT area",
+      title: "Near Santa Isabel College",
       location: "Pueblo Conception Mandurriao Iloilo",
       price: 2500,
-      images: ["mandu bh 1.jpg"],
+      images: ["/nay fernandez bh1.jpg", "/nay fernandez bh2.jpg"],
       description: "Convenient location near WIT",
       amenities: [
         "Free used of shared kitchen",
         "Laundry area available",
-        "Clean shared bathrooms(regularly maintained)"
+        "Clean shared bathrooms(regularly maintained)",
       ],
       highlights: ["1 Month Deposit", "Wifi"],
       contact: {
         name: "Property Owner",
         phone: "09123456789",
-        email: "RenterGo@gmail.com"
-      }
-    }
+        email: "RenterGo@gmail.com",
+      },
+      map: "/pueblo-map.png", // 🗺️ added map for this property
+    },
   };
 
   const property = propertyData[id];
@@ -107,7 +110,7 @@ export default function ViewInfo() {
 
   const handleRent = () => {
     navigate("/rent", {
-      state: { property }
+      state: { property },
     });
   };
 
@@ -234,11 +237,16 @@ export default function ViewInfo() {
               </div>
             </div>
 
-            {/* Location */}
+            {/* Location with Map */}
             <div className="location-card">
               <h3>LOCATION</h3>
               <div className="map-placeholder">
-                <p>{property.location}</p>
+                <img
+                  src={property.map}
+                  alt={`${property.title} map`}
+                  className="map-image"
+                />
+                <p className="map-caption">{property.location}</p>
               </div>
             </div>
 

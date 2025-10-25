@@ -36,16 +36,11 @@
   opacity: 0.8;
 }
 
-.nav-list .active-link {
-  border-bottom: 2px solid white;
-}
-
 .nav-list .active-link a {
-  color: #dbeafe; /* Light color highlight */
+  color: #dbeafe; 
   font-weight: 600;
 }
-
-/* === Profile icon styling === */
+/*profile*/
 .profile-icon {
   cursor: pointer;
   position: absolute;

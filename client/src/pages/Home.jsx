@@ -24,9 +24,9 @@ export default function Home() {
     },
     {
       id: 3,
-      image: "mandu bh 1.jpg",
-      title: "WIT Area",
-      location: "Pueblo Conception, Mandurriao, Iloilo",
+      image: "nay fernandez bh.jpg",
+      title: "Nay Fernandez Boarding House",
+      location: "Brgy. Pueblo Conception, Mandurriao, Iloilo",
     },
   ];
 
@@ -89,63 +89,92 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      {/* Header */}
-      <div className="header-background">
-        <h2 className="header-text">
-          "Find your next home away from home—fast, easy, and reliable"
-        </h2>
+      {/* HEADER SECTION WITH BACKGROUND IMAGE */}
+      <div
+        className="header-background"
+        style={{
+          backgroundImage: 'url("/bghome.jpg")', // ✅ Correct way
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          position: "relative",
+          color: "white",
+          padding: "100px 40px",
+          textAlign: "center",
+        }}
+      >
+        {/* Dark overlay for readability */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 0,
+          }}
+        ></div>
 
-        {/* Search Section */}
-        <div className="search-container">
-          <span className="filter-icon">
-            <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" />
-            </svg>
-          </span>
+        {/* Text and Search Section */}
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <h2 className="header-text">
+            "Find your next home away from home—fast, easy, and reliable"
+          </h2>
 
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search for a place..."
-              className="search-input"
-              value={searchTerm}
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              onFocus={() =>
-                setShowSuggestions(searchTerm.trim() !== "" ? true : false)
-              }
-            />
+          <div className="search-container">
+            <span className="filter-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" />
+              </svg>
+            </span>
 
-            {/* Suggestion Dropdown */}
-            {showSuggestions && searchTerm.trim() !== "" && (
-              <ul className="suggestions-list">
-                {filteredProperties.length > 0 ? (
-                  filteredProperties.map((property, index) => (
-                    <li
-                      key={property.id}
-                      className={`suggestion-item ${
-                        index === highlightedIndex ? "highlighted" : ""
-                      }`}
-                      onMouseDown={() => handleSelectSuggestion(property)}
-                    >
-                      <img
-                        src={property.image}
-                        alt={property.title}
-                        className="suggestion-thumb"
-                      />
-                      <div className="suggestion-text">
-                        <p className="suggestion-title">{property.title}</p>
-                        <p className="suggestion-location">
-                          {property.location}
-                        </p>
-                      </div>
-                    </li>
-                  ))
-                ) : (
-                  <li className="no-match">No matches found</li>
-                )}
-              </ul>
-            )}
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Search for a place..."
+                className="search-input"
+                value={searchTerm}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                onFocus={() =>
+                  setShowSuggestions(searchTerm.trim() !== "" ? true : false)
+                }
+              />
+
+              {/* Suggestion Dropdown */}
+              {showSuggestions && searchTerm.trim() !== "" && (
+                <ul className="suggestions-list">
+                  {filteredProperties.length > 0 ? (
+                    filteredProperties.map((property, index) => (
+                      <li
+                        key={property.id}
+                        className={`suggestion-item ${
+                          index === highlightedIndex ? "highlighted" : ""
+                        }`}
+                        onMouseDown={() => handleSelectSuggestion(property)}
+                      >
+                        <img
+                          src={property.image}
+                          alt={property.title}
+                          className="suggestion-thumb"
+                        />
+                        <div className="suggestion-text">
+                          <p className="suggestion-title">{property.title}</p>
+                          <p className="suggestion-location">
+                            {property.location}
+                          </p>
+                        </div>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="no-match">No matches found</li>
+                  )}
+                </ul>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -181,6 +210,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Footer */}
       <footer className="footer">© 2025 RenterGo. All rights reserved.</footer>
     </div>
   );

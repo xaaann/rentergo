@@ -1,7 +1,7 @@
-// Landlord.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react"; // removed Verified
+import { FaCheckCircle } from "react-icons/fa"; // ✅ added Font Awesome check icon
 import "./Landlord.css";
 
 export default function Landlord() {
@@ -9,43 +9,35 @@ export default function Landlord() {
 
   const landlords = [
     {
-      name: "Rizal Boardinghouse",
-      owner: "Jhean Kate Rizal",
-      address: "Gen. Luna, La Paz Iloilo City",
-      avatar: "avatar1.png",
-      boardinghouse: "Rizal Boardinghouse",
+      name: "Isidro Boardinghouse",
+      owner: "Isidro Bolante",
+      address: "Brgy. Bakhaw, Mandurriao, Iloilo City",
+      avatar: "boy.png",
     },
     {
       name: "Magss Boarding House",
       owner: "Mags Salvador",
       address: "Burgos St. Lapaz Iloilo City",
-      avatar: "avatar2.png",
-      boardinghouse: "Magss Boarding House",
+      avatar: "woman (1).png",
     },
     {
-      name: "Tanya Boardinghouse",
-      owner: "Tanya Lim",
-      address: "Brgy Tacas, Jaro, Iloilo City",
-      avatar: "avatar3.png",
-      boardinghouse: "Tanya Boardinghouse",
-    },
-    {
-      name: "Sarrah Boardinghouse",
-      owner: "Sarrah Cruz",
-      address: "Iloilo City",
-      avatar: "avatar4.png",
-      boardinghouse: "Sarrah Boardinghouse",
+      name: "Nay Fernandez Boardinghouse",
+      owner: "Nay Fernandez",
+      address: "Brgy. Pueblo Conception, Mandurriao, Iloilo",
+      avatar: "woman.png",
     },
   ];
 
   const handleViewInfo = (index) => {
-    navigate(`/landlord-info/${index}`); // ✅ dynamic navigation
+    navigate(`/landlord-info/${index}`);
   };
 
   return (
-    <div className="bg-white text-black min-h-screen">
-      <section className="main-section">
-        <h2 className="section-title">See Landlords Info</h2>
+    <div className="bg-white text-black min-h-screen flex flex-col">
+      <section className="main-section flex-grow">
+        <div className="title-container">
+          <h2 className="section-title">See Landlords Info</h2>
+        </div>
 
         <div className="landlord-list">
           {landlords.map((landlord, index) => (
@@ -55,7 +47,8 @@ export default function Landlord() {
                 <div>
                   <p className="landlord-name">
                     {landlord.name}
-                    <span className="verified-dot">●</span>
+                    {/* ✅ replaced Lucide Verified with Font Awesome check */}
+                    <FaCheckCircle className="verified-check" />
                   </p>
                   <p className="landlord-address">{landlord.address}</p>
                 </div>
@@ -72,7 +65,10 @@ export default function Landlord() {
         </div>
       </section>
 
-      <footer className="footer">© 2025 RenterGo. All rights reserved.</footer>
+      {/* ✅ Matching footer style */}
+      <footer className="footer">
+        <p>© 2025 RenterGo. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

@@ -1,36 +1,17 @@
 /* RentPage.css */
-
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .rent-page-container {
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #f5f5f5;
-    min-height: calc(100vh - 50px); /* Adjust based on your Navbar height */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.rent-header {
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.rent-header h1 {
-    font-size: 2rem;
-    color: #333;
-}
-
-.rent-header p {
-    font-size: 1rem;
-    color: #666;
-    margin-top: 5px;
 }
 
 .rental-form {
     background-color: white;
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-content {
