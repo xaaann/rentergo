@@ -1,13 +1,13 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Verified } from "lucide-react"; // ✅ import the verified icon
+import { FaCheckCircle } from "react-icons/fa"; 
 import "./LandlordInfo.css";
 
 export default function LandlordInfo() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Simulated landlord data
+  
   const landlords = [
     {
       name: "Isidro Boardinghouse",
@@ -50,12 +50,13 @@ export default function LandlordInfo() {
         </button>
       </div>
 
+      {/* Profile Section */}
       <div className="profile-section">
         <img src={landlord.avatar} alt="Landlord" className="profile-avatar" />
         <div className="profile-details">
           <h2 className="landlord-name">
             {landlord.owner}
-            <Verified className="verified-check" size={18} /> {/* ✅ verified icon */}
+            <FaCheckCircle className="verified-check" /> {/* ✅ Replaced Verified with FaCheckCircle */}
           </h2>
           <p className="landlord-role">Owner of {landlord.boardinghouse}</p>
           <p className="landlord-address">{landlord.address}</p>

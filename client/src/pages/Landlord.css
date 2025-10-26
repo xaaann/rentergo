@@ -1,18 +1,17 @@
-/* ===== Page Layout ===== */
-html, body {
+.body {
   height: 100%;
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .bg-white {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* ensures footer stays at bottom */
+  min-height: 100vh; 
 }
 
-/* ===== Main Section ===== */
 .main-section {
-  flex: 1; /* push footer to the bottom */
+  flex: 1; 
   padding: 6rem 3rem 2rem;
 }
 

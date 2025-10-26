@@ -5,15 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Poppins", sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 /* Card Container */
 .signin-card {
-  background: white;
+  background: #fff;
   border-radius: 24px;
-  padding: 60px 80px; /* Increased padding */
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+ padding: 60px 80px; /* Increased padding */ 
   width: 85%;
   max-width: 600px; /* Increased max-width */
   text-align: center;
@@ -45,23 +44,21 @@
 
 /* Button */
 .signin-button {
-  background: linear-gradient(135deg, #006aff, #0052cc);
-  color: white;
+  background: #0066ff;
+  color: #fff;
   border: none;
   padding: 14px 32px; /* Increased padding */
   border-radius: 25px;
   font-size: 18px; /* Increased font size */
   cursor: pointer;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0, 106, 255, 0.3);
   transition: all 0.3s ease;
   width: 100%;
   margin-top: 30px; /* Increased margin */
 }
 
 .signin-button:hover {
-  background: linear-gradient(135deg, #0052cc, #003d99);
-  box-shadow: 0 6px 20px rgba(0, 106, 255, 0.4);
+  background: #0066ff;
 }
 
 /* Sign Up Link */
@@ -72,7 +69,7 @@
 }
 
 .signup-link span {
-  color: #007bff;
+  color: #0066ff;
   text-decoration: underline;
   cursor: pointer;
 }

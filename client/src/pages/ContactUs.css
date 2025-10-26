@@ -1,4 +1,6 @@
-/* General Container */
+.body{
+    font-family: Arial, sans-serif;
+}
 .contactus-container {
   background-color: #ffff;
   color: #333;
