@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight } from "lucide-react"; // removed Verified
-import { FaCheckCircle } from "react-icons/fa"; // ✅ added Font Awesome check icon
+import { ArrowRight } from "lucide-react"; 
+import { FaCheckCircle } from "react-icons/fa"; 
 import "./Landlord.css";
 
 export default function Landlord() {
@@ -47,7 +47,7 @@ export default function Landlord() {
                 <div>
                   <p className="landlord-name">
                     {landlord.name}
-                    {/* ✅ replaced Lucide Verified with Font Awesome check */}
+
                     <FaCheckCircle className="verified-check" />
                   </p>
                   <p className="landlord-address">{landlord.address}</p>
@@ -65,7 +65,7 @@ export default function Landlord() {
         </div>
       </section>
 
-      {/* ✅ Matching footer style */}
+
       <footer className="footer">
         <p>© 2025 RenterGo. All rights reserved.</p>
       </footer>

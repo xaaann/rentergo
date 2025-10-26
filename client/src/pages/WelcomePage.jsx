@@ -7,16 +7,6 @@ export default function WelcomePage() {
 
   return (
     <div className="welcome-container">
-      {/* Navbar with Logo and Sign In */}
-      <nav className="welcome-navbar">
-        <div className="navbar-logo" onClick={() => navigate("/home")}>
-          <img src="/logonowhite.png" alt="Logo" className="navbar-logo-img" />
-        </div>
-        <button className="signin-btn" onClick={() => navigate("/signin")}>
-          Sign In
-        </button>
-      </nav>
-
       <div className="welcome-card">
         {/* Left Side */}
         <div className="welcome-left">

@@ -39,7 +39,7 @@ export default function ViewInfo() {
         "Overnight stay costs ₱100 and only for family members",
       ],
       contact: {
-        name: "Isidro Bolante",
+        name: "RenterGo",
         phone: "09123456789",
         email: "RenterGo@gmail.com",
       },
@@ -48,17 +48,20 @@ export default function ViewInfo() {
     2: {
       title: "Maggs Boarding House",
       location: "Burgos St. La Paz",
-      price: 2500,
-      images: ["/maggs bh1.jpg", "/maggs bh2.jpg", "/maggs bh3.jpg"],
-      description: "A single room with double spacer bed",
+      price: {
+        withoutCR: 3500,
+        withCR: 5000,
+      },
+ images: ["/maggs bh1.jpg", "/maggs bh2.jpg", "/maggs bh3.jpg"],
+      description: "A comfortable boarding house near ISAT-U",
       amenities: [
-        "Free use of shared kitchen",
-        "Laundry area available",
-        "Clean shared bathrooms (regularly maintained)",
+        "Wifi",
+        "Water",
+        "Electricity",
       ],
-      highlights: ["1 Month Deposit", "WiFi", "Parking", "Air Condition"],
+      highlights: ["1 Month Advance", "1 Year Minimum Stay","WiFi","Both Male and Female","Water & Electricity Included","Curfew Hours Applied"],
       contact: {
-        name: "Jhean Kate Rizal",
+        name: "RenterGo",
         phone: "09299994538",
         email: "RenterGo@gmail.com",
       },
@@ -69,15 +72,15 @@ export default function ViewInfo() {
       location: "Pueblo Conception Mandurriao Iloilo",
       price: 2500,
       images: ["/nay fernandez bh1.jpg", "/nay fernandez bh2.jpg"],
-      description: "Convenient location near WIT",
+      description: "A comfortable boarding house near Santa Isabel College and Festive Walk",
       amenities: [
-        "Free use of shared kitchen",
-        "Laundry area available",
-        "Clean shared bathrooms (regularly maintained)",
+        "Room only (no additional amenities)",
+        "Water: Free",
+        "Electricity: Not included"
       ],
-      highlights: ["1 Month Deposit", "WiFi"],
-      contact: {
-        name: "Property Owner",
+   highlight:["1 Month Deposit","1 Year Minimum Stay","Room Only","Both Male and Female"],
+   contact: {
+        name: "RenterGo",
         phone: "09123456789",
         email: "RenterGo@gmail.com",
       },

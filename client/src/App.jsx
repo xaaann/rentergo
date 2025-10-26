@@ -17,18 +17,26 @@ import LandlordInfo from "./pages/LandlordInfo";
 import LandlordDashboard from "./pages/LandlordDashboard";
 import AddListing from "./pages/AddListing";
 import TenantSignup from "./pages/TenantSignup";
-import LandlordSignup from "./pages/LandlordSignup"; // ✅ import the Landlord Signup page
-import SignIn from "./pages/SignIn"; // ✅ Import the SignIn page
+import LandlordSignup from "./pages/LandlordSignup";
+import SignIn from "./pages/SignIn";
 
 export default function App() {
   const location = useLocation();
 
-  // Hide Navbar only on Landing Page (/)
-  const hideNavbar = location.pathname === "/";
+  // Hide Navbar on these routes:
+  const hideNavbarRoutes = [
+    "/",                 
+    "/tenant-signup",    
+    "/landlord-signup",  
+    "/signin",    
+    "/welcome"       
+  ];
+
+  const hideNavbar = hideNavbarRoutes.includes(location.pathname);
 
   return (
     <>
-      {/* Show Navbar everywhere except on the Landing Page */}
+      {/* ✅ Show Navbar only when not in hidden routes */}
       {!hideNavbar && <Navbar />}
 
       <div className="container">
@@ -40,11 +48,11 @@ export default function App() {
           <Route path="/welcome" element={<WelcomePage />} />
 
           {/* Signup Pages */}
-          <Route path="/tenant-signup" element={<TenantSignup />} />  {/* ✅ Tenant */}
-          <Route path="/landlord-signup" element={<LandlordSignup />} />  {/* ✅ Landlord */}
+          <Route path="/tenant-signup" element={<TenantSignup />} />
+          <Route path="/landlord-signup" element={<LandlordSignup />} />
 
           {/* Sign In Page */}
-          <Route path="/signin" element={<SignIn />} />  {/* ✅ Add SignIn Route */}
+          <Route path="/signin" element={<SignIn />} />
 
           {/* Main Pages */}
           <Route path="/home" element={<Home />} />
