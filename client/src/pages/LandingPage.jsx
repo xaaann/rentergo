@@ -6,7 +6,7 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    navigate("/home"); // change to your route
+    navigate("/welcome"); // change to your route
   };
 
   return (

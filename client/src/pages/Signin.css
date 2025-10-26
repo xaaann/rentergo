@@ -1,75 +1,85 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* General Layout */
+.signin-container {
   height: 100vh;
-}
-
-.container {
-  background-color: #fff;
+  background: linear-gradient(135deg, #f4f7ff 0%, #e8edff 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  font-family: "Poppins", sans-serif;
 }
 
-.login-card {
-  background-color: #fff;
-  border: 1px solid #454545;
-  border-radius: 12px;
-  padding: 40px 30px;
-  width: 350px;
+/* Card Container */
+.signin-card {
+  background: white;
+  border-radius: 24px;
+  padding: 60px 80px; /* Increased padding */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  max-width: 600px; /* Increased max-width */
   text-align: center;
+  height: 70vh;
 }
 
-.logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 20px;
+/* Logo */
+.signin-logo-container {
+  margin-bottom: 30px; /* Increased margin */
 }
 
-.input-field {
+.signin-logo {
+  width: 100px; /* Increased logo size */
+  height: auto;
+}
+
+/* Form */
+.signin-input {
+  padding: 14px 16px; /* Increased padding */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f9fafb;
+  font-size: 16px; /* Increased font size */
+  outline: none;
+  margin-bottom: 10px;
   width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 15px;
-  border: 1px solid #333;
-  border-radius: 8px;
-  font-size: 14px;
+  box-sizing: border-box;
 }
 
-.sign-in-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #0066ff;
-  color: #fff;
+/* Button */
+.signin-button {
+  background: linear-gradient(135deg, #006aff, #0052cc);
+  color: white;
   border: none;
-  border-radius: 6px;
+  padding: 14px 32px; /* Increased padding */
+  border-radius: 25px;
+  font-size: 18px; /* Increased font size */
   cursor: pointer;
-  margin-top: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 106, 255, 0.3);
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 30px; /* Increased margin */
 }
 
-.signup-text {
-  margin-top: 12px;
-  font-size: 12px;
+.signin-button:hover {
+  background: linear-gradient(135deg, #0052cc, #003d99);
+  box-shadow: 0 6px 20px rgba(0, 106, 255, 0.4);
+}
+
+/* Sign Up Link */
+.signup-link {
+  margin-top: 30px; /* Increased margin */
+  font-size: 14px;
   color: #333;
 }
 
-.signup-text a {
-  color: #0066ff;
-  text-decoration: none;
+.signup-link span {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.signup-text a:hover {
-  text-decoration: underline;
+/* Responsive */
+@media (max-width: 900px) {
+  .signin-card {
+    padding: 40px;
+  }
 }

@@ -10,15 +10,18 @@ export default function Navbar() {
 
   return (
     <nav className="nav">
+      {/* Logo */}
+      <div className="logo" onClick={() => navigate("/")}>
+        <img src="/logobnowhite.png" alt="Logo" className="logo-img" />
+      </div>
+
       <ul className="nav-list">
-        {/* ✅ Changed “to” from "/" → "/home" */}
         <CustomLink to="/home">Home</CustomLink>
         <CustomLink to="/landlord">Landlord</CustomLink>
         <CustomLink to="/aboutUs">About</CustomLink>
         <CustomLink to="/contactUs">Contact Us</CustomLink>
       </ul>
 
-      {/* Profile icon (no underline, circle stays white) */}
       <div
         className={`profile-icon ${isProfileActive ? "profile-active" : ""}`}
         onClick={() => navigate("/landlordDashboard")}

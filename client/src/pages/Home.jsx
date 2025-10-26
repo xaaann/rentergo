@@ -82,10 +82,15 @@ export default function Home() {
     navigate(`/property/${propertyId}`);
   };
 
+  const handleClearSearch = () => {
+    setSearchTerm("");
+    setFilteredProperties([]);
+    setShowSuggestions(false);
+    setHighlightedIndex(-1);
+  };
+
   const displayedProperties =
-    filteredProperties.length > 0 || searchTerm
-      ? filteredProperties
-      : properties;
+    searchTerm.trim() !== "" ? filteredProperties : properties;
 
   return (
     <div className="home-container">
@@ -93,7 +98,7 @@ export default function Home() {
       <div
         className="header-background"
         style={{
-          backgroundImage: 'url("/bghome.jpg")', // ✅ Correct way
+          backgroundImage: 'url("/bghome.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -120,17 +125,6 @@ export default function Home() {
           </h2>
 
           <div className="search-container">
-            <span className="filter-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" />
-              </svg>
-            </span>
-
             <div className="search-bar">
               <input
                 type="text"
@@ -143,6 +137,17 @@ export default function Home() {
                   setShowSuggestions(searchTerm.trim() !== "" ? true : false)
                 }
               />
+
+              {/* Erase (x) button */}
+              {searchTerm.trim() !== "" && (
+                <button
+                  className="clear-button"
+                  onClick={handleClearSearch}
+                  aria-label="Clear search"
+                >
+                  &#10005;
+                </button>
+              )}
 
               {/* Suggestion Dropdown */}
               {showSuggestions && searchTerm.trim() !== "" && (

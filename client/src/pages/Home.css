@@ -42,13 +42,6 @@
   gap: 10px;
 }
 
-.filter-icon {
-  font-size: 24px;
-  color: white;
-  display: flex;
-  align-items: center;
-}
-
 .search-bar {
   position: relative;
   width: 100%;
@@ -56,11 +49,29 @@
 
 .search-input {
   width: 100%;
-  padding: 15px 30px;
+  padding: 15px 40px 15px 15px; /* extra right padding for clear button */
   border-radius: 30px;
   border: none;
   outline: none;
   font-size: 1rem;
+}
+
+/* Clear (x) button inside search input */
+.clear-button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.clear-button:hover {
+  color: #000;
 }
 
 /* Suggestions dropdown */
