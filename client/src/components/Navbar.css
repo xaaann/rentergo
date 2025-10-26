@@ -1,53 +1,89 @@
-/* Navbar.css */
 .nav {
-    background-color: #0066FF;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-sizing: border-box;
+  background-color: #0066ff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Logo styling */
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
 }
 
 .nav-list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    gap: 3rem;
-    font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  font-size: 1.5rem;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-list li a {
-    color: white;
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0;
-    transition: opacity 0.3s;
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: opacity 0.3s;
 }
 
 .nav-list li a:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
-/* Style for the active link */
-.active-link {
-    border-bottom: 2px solid white;
+.nav-list .active-link a {
+  color: #dbeafe;
+  font-weight: 600;
 }
 
+/* Profile icon */
 .profile-icon {
-    cursor: pointer;
-    position: absolute;
-    right: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.profile-icon:hover {
-    opacity: 0.8;
+/* White circle container */
+.icon-circle {
+  background-color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* When profile page is active — adds white border around the circle only */
+.profile-active .icon-circle {
+  border: 2px solid white;
+}
+
+/* Hover effect (optional) */
+.profile-icon:hover .icon-circle {
+  opacity: 0.9;
+  transform: scale(1.05);
+  transition: 0.2s ease-in-out;
 }

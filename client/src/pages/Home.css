@@ -1,12 +1,13 @@
-/* Home.css */
+* {
+  font-family: "Arial";
+}
 
 .home-container {
-  padding-top: 80px; /* Account for fixed navbar */
+  padding-top: 60px;
 }
 
 /* Header section */
 .header-background {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f4/University_Residential_Housing_Ennis_Hall.jpg");
   background-size: cover;
   background-position: center;
   padding: 100px 40px;
@@ -16,69 +17,145 @@
 }
 
 .header-background::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-.header-background > * {
-  position: relative;
-  z-index: 2;
 }
 
 .header-text {
-  font-weight: bold;
-  font-size: 2.5rem;
   margin-bottom: 40px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  color: white;
+  font-size: 1.5rem;
 }
 
-/* Search box container */
+/* Search bar */
 .search-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   max-width: 600px;
-  gap: 15px;
+  gap: 10px;
 }
 
-.filter-icon {
-  font-size: 24px;
-  color: #333;
-  display: flex;
-  align-items: center;
+.search-bar {
+  position: relative;
+  width: 100%;
 }
 
 .search-input {
   width: 100%;
-  padding: 15px 30px;
+  padding: 15px 40px 15px 15px; /* extra right padding for clear button */
   border-radius: 30px;
   border: none;
   outline: none;
   font-size: 1rem;
 }
 
-/* Content section */
+/* Clear (x) button inside search input */
+.clear-button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.clear-button:hover {
+  color: #000;
+}
+
+/* Suggestions dropdown */
+.suggestions-list {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  z-index: 10;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover,
+.suggestion-item.highlighted {
+  background-color: #0066ff;
+  color: white;
+}
+
+.suggestion-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.suggestion-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.suggestion-title {
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+
+.suggestion-location {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.suggestion-item.highlighted .suggestion-location,
+.suggestion-item:hover .suggestion-location {
+  color: white;
+}
+
+.no-match {
+  padding: 10px 15px;
+  color: #666;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Explore section */
 .content-section {
   padding: 40px;
 }
 
-/* Explore title */
 .explore-title {
   margin: 0 0 30px 0;
-  font-weight: bold;
   font-size: 2rem;
+  text-align: left;
 }
 
-/* Cards container */
+/* Cards layout */
 .cards-container {
   display: flex;
   gap: 30px;
@@ -87,48 +164,57 @@
   margin-bottom: 50px;
 }
 
-/* Single card style */
 .card {
   width: 300px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
+  background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, transform 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
 }
 
 .card-image {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .card-info {
   background-color: #0066ff;
   color: white;
   padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card-info h4 {
   margin: 0 0 8px 0;
-  font-size: 1.25rem;
   color: white;
+  font-size: 1.2rem;
 }
 
 .card-info p {
   margin: 0 0 15px 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: white;
 }
 
-/* View info button */
+/* View Info button */
 .view-button {
-  background-color: #d4d4f0;
+  background-color: white;
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
@@ -136,9 +222,63 @@
   font-size: 1rem;
   font-weight: 500;
   color: #333;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s ease;
+  align-self: flex-start;
 }
 
 .view-button:hover {
   background-color: #b4b4d0;
+  transform: scale(1.03);
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+  .cards-container {
+    gap: 20px;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  .card-image {
+    height: 220px;
+  }
+
+  .explore-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-info {
+    padding: 15px;
+  }
+
+  .view-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .explore-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
 }

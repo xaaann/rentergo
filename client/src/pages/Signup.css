@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-box {
+  background: #fff;
+  padding: 30px 30px;
+  border-radius: 15px;
+  width: 350px;
+  text-align: center;
+  border: 1px solid #454545;
+}
+
+.logo {
+  width: 100px;         
+  height: 100px;
+  border-radius: 50%;    
+  object-fit: cover;     
+  display: block;
+  margin: 0 auto 20px; 
+}
+
+.form-box input[type="text"],
+.form-box input[type="email"],
+.form-box input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #333;
+  border-radius: 8px;
+  outline: none;
+}
+
+input[type="file"] {
+  margin-right: 300px;
+}
+
+label {
+  text-align: left;
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+}
+
+.face-btn {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  width: 60px;
+  height: 50px;
+  background: white;
+  cursor: pointer;
+  margin-right: 300px;
+
+}
+
+.face-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.sign-up-button{
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.signin-text {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.signin-text a {
+  text-decoration: none;
+  color: #0066ff;
+  font-size: 15px;
+}

@@ -1,0 +1,232 @@
+.property-detail {
+  padding: 100px 40px 60px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+/* 🔙 Back Button (visible at top only) */
+.back-button-top {
+  display: block;
+  margin: 0 0 25px 0;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.back-button-top:hover {
+  background-color: #0066ff;
+  transform: translateY(-2px);
+}
+
+.detail-content {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-left {
+  max-width: 800px;
+  width: 100%;
+}
+
+/* === IMAGE GALLERY === */
+.image-gallery {
+  margin-bottom: 20px;
+}
+
+.main-image-container {
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 400px;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav-arrow.left {
+  left: 10px;
+}
+
+.nav-arrow.right {
+  right: 10px;
+}
+
+.image-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.thumbnail.active,
+.thumbnail:hover {
+  opacity: 1;
+  border: 2px solid #0066ff;
+}
+
+/* === SECTIONS === */
+.property-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #000;
+}
+
+.property-location {
+  font-size: 16px;
+  color: #555;
+}
+
+.property-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.highlights-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.highlight-badge {
+  background-color: #e0e7ff;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.details-section {
+  margin-top: 30px;
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card {
+  background: #f1f5f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.contact-info input {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  border: none;
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.update-info {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.location-card {
+  margin-top: 25px;
+}
+
+.map-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.map-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.map-caption {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.rent-button {
+  margin-top: 20px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.25s ease;
+}
+
+.rent-button:hover {
+  background: #0066ff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .property-detail {
+    padding: 80px 20px;
+  }
+
+  .main-image {
+    height: 280px;
+  }
+
+  .back-button-top {
+    margin-bottom: 20px;
+  }
+}
+

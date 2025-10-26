@@ -1,0 +1,85 @@
+/* General Layout */
+.signin-container {
+  height: 100vh;
+  background: linear-gradient(135deg, #f4f7ff 0%, #e8edff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Card Container */
+.signin-card {
+  background: white;
+  border-radius: 24px;
+  padding: 60px 80px; /* Increased padding */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  max-width: 600px; /* Increased max-width */
+  text-align: center;
+  height: 70vh;
+}
+
+/* Logo */
+.signin-logo-container {
+  margin-bottom: 30px; /* Increased margin */
+}
+
+.signin-logo {
+  width: 100px; /* Increased logo size */
+  height: auto;
+}
+
+/* Form */
+.signin-input {
+  padding: 14px 16px; /* Increased padding */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f9fafb;
+  font-size: 16px; /* Increased font size */
+  outline: none;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Button */
+.signin-button {
+  background: linear-gradient(135deg, #006aff, #0052cc);
+  color: white;
+  border: none;
+  padding: 14px 32px; /* Increased padding */
+  border-radius: 25px;
+  font-size: 18px; /* Increased font size */
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 106, 255, 0.3);
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 30px; /* Increased margin */
+}
+
+.signin-button:hover {
+  background: linear-gradient(135deg, #0052cc, #003d99);
+  box-shadow: 0 6px 20px rgba(0, 106, 255, 0.4);
+}
+
+/* Sign Up Link */
+.signup-link {
+  margin-top: 30px; /* Increased margin */
+  font-size: 14px;
+  color: #333;
+}
+
+.signup-link span {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .signin-card {
+    padding: 40px;
+  }
+}

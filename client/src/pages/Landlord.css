@@ -1,0 +1,112 @@
+/* ===== Page Layout ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.bg-white {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures footer stays at bottom */
+}
+
+/* ===== Main Section ===== */
+.main-section {
+  flex: 1; /* push footer to the bottom */
+  padding: 6rem 3rem 2rem;
+}
+
+.title-container {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.section-line {
+  display: none;
+}
+
+/* ===== Landlord List ===== */
+.landlord-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.landlord-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+
+}
+
+/* ===== Landlord Info ===== */
+.landlord-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.landlord-name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.verified-check {
+  color: #0066ff; 
+  font-size: 1rem;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+
+.landlord-address {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+/* ===== Button Styling ===== */
+.arrow-btn {
+  background: none;
+  border: none;
+  color: #4b5563;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.arrow-btn:hover {
+  color: #0066ff;
+  transform: translateX(4px);
+}
+
+/* ===== Footer (Fixed to Bottom) ===== */
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  border-top: 1px solid #e5e7eb;
+  padding: 20px 0;
+  background-color: #fff;
+  margin-top: auto; /* pushes it to the bottom */
+}
