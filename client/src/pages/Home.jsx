@@ -121,7 +121,7 @@ export default function Home() {
         {/* Text and Search Section */}
         <div style={{ position: "relative", zIndex: 1 }}>
           <h2 className="header-text">
-            "Find your next home away from home—fast, easy, and reliable"
+            Find your next home away from home
           </h2>
 
           <div className="search-container">
