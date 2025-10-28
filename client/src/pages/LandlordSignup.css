@@ -39,7 +39,7 @@
   position: relative;
 }
 
-/* Back Button (inside purple area) */
+/* Back Button */
 .back-btn {
   position: absolute;
   top: 70px;
@@ -144,6 +144,7 @@
   display: block;
 }
 
+/* Camera / Face Verification Section */
 .camera-btn {
   margin-top: 8px;
   background: linear-gradient(135deg, #6a11cb, #4f46e5);
@@ -159,6 +160,37 @@
 .camera-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+}
+
+.camera-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.camera-view {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  border: 2px solid #4f46e5;
+  margin-bottom: 10px;
+}
+
+.camera-btn.capture {
+  background: linear-gradient(135deg, #34d399, #059669);
+}
+
+.camera-btn.capture:hover {
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.4);
+}
+
+/* Verified Text */
+.verified-text {
+  color: #16a34a;
+  font-weight: 600;
+  margin-top: 8px;
+  text-align: left;
 }
 
 /* Submit Button */
@@ -222,5 +254,9 @@
     top: 15px;
     left: 15px;
     font-size: 13px;
+  }
+
+  .camera-view {
+    max-width: 100%;
   }
 }

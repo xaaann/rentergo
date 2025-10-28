@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 // Components
 import Navbar from "./components/Navbar";
+import ProtectedRoute from "./components/ProtectedRoute"; // ✅ Add this import
 
 // Pages
 import LandingPage from "./pages/LandingPage";
@@ -15,38 +16,28 @@ import ViewInfo from "./pages/ViewInfo";
 import RentPage from "./pages/RentPage";
 import LandlordInfo from "./pages/LandlordInfo";
 import LandlordDashboard from "./pages/LandlordDashboard";
+import TenantDashboard from "./pages/TenantDashboard";
 import AddListing from "./pages/AddListing";
 import TenantSignup from "./pages/TenantSignup";
-import LandlordSignup from "./pages/LandlordSignup"; // ✅ import the Landlord Signup page
-import SignIn from "./pages/SignIn"; // ✅ Import the SignIn page
+import LandlordSignup from "./pages/LandlordSignup";
+import SignIn from "./pages/SignIn";
 
 export default function App() {
   const location = useLocation();
-
-  // Hide Navbar only on Landing Page (/)
   const hideNavbar = location.pathname === "/";
 
   return (
     <>
-      {/* Show Navbar everywhere except on the Landing Page */}
       {!hideNavbar && <Navbar />}
 
       <div className="container">
         <Routes>
-          {/* Landing Page */}
+          {/* Public Pages */}
           <Route path="/" element={<LandingPage />} />
-
-          {/* Welcome Page */}
           <Route path="/welcome" element={<WelcomePage />} />
-
-          {/* Signup Pages */}
-          <Route path="/tenant-signup" element={<TenantSignup />} />  {/* ✅ Tenant */}
-          <Route path="/landlord-signup" element={<LandlordSignup />} />  {/* ✅ Landlord */}
-
-          {/* Sign In Page */}
-          <Route path="/signin" element={<SignIn />} />  {/* ✅ Add SignIn Route */}
-
-          {/* Main Pages */}
+          <Route path="/tenant-signup" element={<TenantSignup />} />
+          <Route path="/landlord-signup" element={<LandlordSignup />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/home" element={<Home />} />
           <Route path="/landlord" element={<Landlord />} />
           <Route path="/aboutUs" element={<AboutUs />} />
@@ -54,8 +45,34 @@ export default function App() {
           <Route path="/property/:id" element={<ViewInfo />} />
           <Route path="/rent" element={<RentPage />} />
           <Route path="/landlord-info/:id" element={<LandlordInfo />} />
-          <Route path="/landlordDashboard" element={<LandlordDashboard />} />
-          <Route path="/AddListing" element={<AddListing />} />
+
+          {/* ✅ Protected Routes */}
+          <Route
+            path="/landlordDashboard"
+            element={
+              <ProtectedRoute allowedRole="landlord">
+                <LandlordDashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/tenantDashboard"
+            element={
+              <ProtectedRoute allowedRole="tenant">
+                <TenantDashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/AddListing"
+            element={
+              <ProtectedRoute allowedRole="landlord">
+                <AddListing />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
     </>

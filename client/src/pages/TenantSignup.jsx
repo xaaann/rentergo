@@ -1,63 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./TenantSignup.css";
 
 export default function TenantSignup() {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    facePhoto: null,
+  });
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData({ ...formData, [name]: files ? files[0] : value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Tenant account submitted successfully!");
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // ✅ Save under "users" in localStorage
+    const users = JSON.parse(localStorage.getItem("users") || "{}");
+    const emailKey = formData.email.toLowerCase();
+    users[emailKey] = { ...formData, role: "tenant", email: emailKey };
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("✅ Tenant account created successfully!");
     navigate("/signin");
   };
 
   return (
     <div className="signup-container">
       <div className="signup-card">
-        {/* Left Section */}
-        <div className="signup-leftt">
-          {/* Back Button */}
-          <button className="back-btn" onClick={() => navigate("/welcome")}>
-            ← Back
-          </button>
-
-          <img src="/logoblackstroke-removebg.png" alt="Logo" className="signup-logo-large" />
-          <h1>Join as a Tenant</h1>
-          <p>
-            Find your perfect home today and connect with trusted landlords easily.
-          </p>
+        <div className="signup-left">
+          <button className="back-btn" onClick={() => navigate("/welcome")}>← Back</button>
+          <img src="/logobnowhite.png" alt="Logo" className="signup-logo-large" />
+          <h1>Welcome, Tenant!</h1>
+          <p>Find your ideal boarding house and connect directly with landlords.</p>
         </div>
 
-        {/* Right Section */}
         <div className="signup-right">
-          <h2 className="signup-title">Create Your Account</h2>
-          <p className="signup-subtitle">Fill out the details below to get started.</p>
-
-          <form className="signup-form" onSubmit={handleSubmit}>
+          <h2>Tenant Signup</h2>
+          <form onSubmit={handleSubmit} className="signup-form">
             <div className="input-group">
-              <input type="text" placeholder="First Name" required />
-              <input type="text" placeholder="Middle Name" />
-              <input type="text" placeholder="Last Name" required />
+              <input type="text" name="firstName" placeholder="First Name" required onChange={handleChange} />
+              <input type="text" name="lastName" placeholder="Last Name" required onChange={handleChange} />
             </div>
 
-            <input type="email" placeholder="Email Address" required />
-            <input type="password" placeholder="Password" required />
+            <input type="email" name="email" placeholder="Email" required onChange={handleChange} />
+            <input type="password" name="password" placeholder="Password" required onChange={handleChange} />
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" required onChange={handleChange} />
 
             <div className="file-group">
-              <label>ID Photo</label>
-              <input type="file" accept="image/*" required />
-
-              <label>Face Verification</label>
-              <button type="button" className="camera-btn">📷 Open Camera</button>
+              <label>Upload Profile Photo:</label>
+              <input type="file" name="facePhoto" accept="image/*" required onChange={handleChange} />
             </div>
 
-            <button type="submit" className="submit-btn">Create Account</button>
+            <button type="submit" className="submit-btn">Sign Up</button>
+            <p>Already have an account? <span onClick={() => navigate("/signin")}>Sign In</span></p>
           </form>
-
-          <p className="signin-link">
-            Already have an account?{" "}
-            <span onClick={() => navigate("/signin")}>Sign In</span>
-          </p>
         </div>
       </div>
     </div>

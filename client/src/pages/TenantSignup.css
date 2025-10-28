@@ -27,9 +27,9 @@
 }
 
 /* Left Section */
-.signup-leftt {
+.signup-left {
   flex: 1;
-  background: linear-gradient(135deg, #2ee863, #027040);
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
   color: #fff;
   padding: 70px 50px;
   display: flex;
@@ -39,7 +39,7 @@
   position: relative;
 }
 
-/* Back Button (inside purple area) */
+/* Back Button */
 .back-btn {
   position: absolute;
   top: 40px;
@@ -132,33 +132,12 @@
 }
 
 /* File Uploads */
-.file-group {
-  margin-top: 10px;
-}
-
 .file-group label {
   font-weight: 600;
   font-size: 14px;
   color: #444;
   margin-top: 8px;
   display: block;
-}
-
-.camera-btn {
-  margin-top: 8px;
-  background: linear-gradient(135deg, #6a11cb, #4f46e5);
-  color: white;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.camera-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
 }
 
 /* Submit Button */
